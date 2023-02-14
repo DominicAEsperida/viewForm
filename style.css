@@ -13,6 +13,7 @@ form {
     margin: auto;
     display: inline-block;
     padding-top: 20px;
+    width: fit-content;
 }
 input[type="submit"]{
     background-color: green;
