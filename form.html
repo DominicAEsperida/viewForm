@@ -6,10 +6,7 @@
     <script language="javascript" type="text/javascript">
         function checkPassword(){
             var password = document.regform.password.value
-            if(password.length == 0){
-                document.getElementById("check").innerHTML = "Enter password please!"
-            }
-            else if(password.length < 8){
+            if(password.length < 8){
                 document.getElementById("check").innerHTML = "Password must be at least 8 characters."
             }
         }
@@ -23,43 +20,48 @@
             }
         }
         function dispMsg(){
-        
+            var inputs = document.querySelectorAll('form input, form textarea');
+            var fieldsPopulated = true;
 
+            inputs.forEach(function(input){
+                if (input.value === '') {
+                    fieldsPopulated = false;
+                }
+            });
+
+            if (fieldsPopulated) {
+                document.getElementById("success").innerHTML = "Hooray! Your account has been successfully created."
+            }
+            else {
+                document.getElementById("success").innerHTML = "Please fill out all the fields!"
+            }
         }
     </script>
 </head>
     <body>
             <h1>Registration Form</h1>
             <form name="regform">
-                First Name: 
-                <br><input class="wrap" type="text" name="firstname" required/></br>
-                Last Name: 
-                <br><input class="wrap" type="text" name="lastname" required/></br>
-                Nick Name: 
-                <br><input class="wrap" type="text" name="nickname" required/></br>
-                Email: 
-                <br><input class="wrap" type="email" name="email" required/></br>
-                Password:
-                <br><input class="wrap" type="password" name="password" required/></br>
+                <h6 id="success" class="msg"></h6>
+                First Name: <br><input class="wrap" type="text" name="firstname" required/></br>
+                Last Name: <br><input class="wrap" type="text" name="lastname" required/></br>
+                Nick Name: <br><input class="wrap" type="text" name="nickname" required/></br>
+                Email: <br><input class="wrap" type="email" name="email" required/></br>
+                Password:<br><input class="wrap" type="password" name="password" required/></br>
                 <h6 id="check" class="pw"></h6>
-                Date of Birth: 
-                <br><input class="wrap" type="date" name="bday" id="dateofBirth" required/></br>
+                Date of Birth: <br><input class="wrap" type="date" name="bday" id="dateofBirth" required/></br>
                 <h6 id="display" class="bd"></h6>
-                Gender: 
-                <br><input type="radio" name="male" value="male" required/>
+                Gender: <br><input type="radio" name="male" value="male" />
                 <label for="male">Male</label>
-                <input type="radio" name="female" value="female" required/>
+                <input type="radio" name="female" value="female" />
                 <label for="fale">Female</label>
-                <input type="radio" name="other" value="other" required/>
+                <input type="radio" name="other" value="other" />
                 <label for="other">Other</label>
                 <br/>
-                Mobile:
-                <br>
-                <input class="wrap" type="tel" name="mobile" required/></br>
+                Mobile:<br><input class="wrap" type="tel" name="mobile" required/></br>
                 Address: 
-                <br><textarea class="wrap" name="address" cols="25" rows="10" required></textarea></br>
-                <input type="button" onclick="checkPassword(); checkAge(); dispMsg();" name="submit" value="SUBMIT"/>
-                <input type="button" name="reset" value="RESET"/>
+                <br><textarea class="ccwrap" name="address" cols="25" rows="10" required></textarea></br>
+                <input type="submit" onclick="checkPassword(); checkAge(); dispMsg();" name="submit" value="SUBMIT"/>
+                <input type="reset" name="reset" value="RESET"/>
             </form>
     </body>
 </html>

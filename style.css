@@ -1,21 +1,19 @@
 body{
-    font-family: 'Oswald';
+    font-family: Verdana;
     font-size: 20px;
     background-color: lightslategray;
     align-content: center;
-}
-.full{
-    width: 100%;
+    text-align: center;
 }
 form {
-    width: mid-content;
-    background-color: white;
-    padding: 20px 25px 20px 20px;
-    margin: 40px;
-    border-radius: 5px;
-    box-sizing: content-box;
+    background: rgb(255, 255, 255, 0.9);
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin: auto;
+    display: inline-block;
+    padding-top: 20px;
 }
-
 input[type="submit"]{
     background-color: green;
     border: 0px;
@@ -30,5 +28,14 @@ input[type="reset"]{
     height: 20px;
     width: 70px;
     font-size: 10px;
-
+    color: white;
+}   
+.pw{
+    color: red;
+}
+.bd{
+    color: red;
+}
+.msg{
+    color: green;
 }
