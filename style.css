@@ -14,7 +14,7 @@ form {
     display: inline-block;
     padding-top: 20px;
 }
-input[type="submit"]{
+input[type="button"]{
     background-color: green;
     border: 0px;
     color: white;
